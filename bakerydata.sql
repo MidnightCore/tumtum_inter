@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 05, 2019 at 05:01 AM
+-- Generation Time: Nov 05, 2019 at 05:42 AM
 -- Server version: 10.3.16-MariaDB
 -- PHP Version: 7.3.7
 
@@ -49,7 +49,8 @@ INSERT INTO `tbcontact` (`id`, `nameContact`, `address`, `contactchannel`, `desc
 (5, 'สันติ', '88/5', '065-998-8844', 'สั่งของเพิ่ม', '2019-10-16 10:47:48'),
 (6, 'สมหญิง', '88/6', '055-355-4778', 'สอบถาม', '2019-10-16 10:50:37'),
 (7, 'วงศฏาพร', '88/7', '082-669-7788', 'สอบถาม', '2019-10-16 10:53:48'),
-(8, 'มาลิณี', '88/8', '081-665-7788', 'ส่งสินค้า', '2019-10-16 10:56:50');
+(8, 'มาลิณี', '88/8', '081-665-7788', 'ส่งสินค้า', '2019-10-16 10:56:50'),
+(9, 'อภิศฎา', '88/9', '099-999-9999', 'สั่งของเพิ่ม', '2019-11-05 11:39:23');
 
 -- --------------------------------------------------------
 
@@ -105,7 +106,7 @@ ALTER TABLE `tbproduct`
 -- AUTO_INCREMENT for table `tbcontact`
 --
 ALTER TABLE `tbcontact`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tbproduct`
