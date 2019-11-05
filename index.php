@@ -1,14 +1,19 @@
 <?php
 include('server/config.php');
-$conn = mysqli_connect(_SERVERNAME, _USERNAME, _PASSWORD,
-_DBNAME);
+$conn = mysqli_connect(
+    _SERVERNAME,
+    _USERNAME,
+    _PASSWORD,
+    _DBNAME
+);
 if (!$conn) die("Connection failed: " . mysqli_connect_error());
-?> 
+?>
 
 
 
 <!doctype html>
 <html>
+
 <head>
     <title>TumTum Inter</title>
     <meta charset="utf-8">
@@ -20,20 +25,21 @@ if (!$conn) die("Connection failed: " . mysqli_connect_error());
     <link href="https://fonts.googleapis.com/css?family=Itim&display=swap" rel="stylesheet">
 
 
-<script>
-	$(document).ready(function() {
-		hideAll();
-	$('#star').show();
- 		$('.show-star').click(function() {
- 			hideAll();
-			$('#star').fadeIn(999);
-		 });
-	 });
-	function hideAll() {}
-</script>
- 
- 
-     <style>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            hideAll();
+            $('#star').show();
+            $('.show-star').click(function() {
+                hideAll();
+                $('#star').fadeIn(999);
+            });
+        });
+
+        function hideAll() {}
+    </script>
+
+
+    <style>
         #navfix {
             margin-left: 40px;
             font-size: 18px;
@@ -79,18 +85,19 @@ if (!$conn) die("Connection failed: " . mysqli_connect_error());
             background-size: cover;
             margin-top: -10px;
         }
-        #qq{
+
+        #qq {
             color: rgb(255, 254, 254);
         }
     </style>
- 
+
 </head>
 
+
 <body>
-<?php include('rsmenu.php');?>
+    <?php include('rsmenu.php'); ?>
 
-
- <div class="container">
+    <div class="container">
         <h1 style="color: rgb(255, 253, 253)">โปรโมชั่น!!</h1>
         <div id="demo" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
@@ -121,20 +128,18 @@ if (!$conn) die("Connection failed: " . mysqli_connect_error());
         </div>
 
         <br><br><br>
-        <h1 style="color: rgb(255, 255, 255)">เมนูแนะนำ</h1>
+        <h1 style="color: rgb(255, 255, 255)">เมนูแนะนำ</h1><br>
     </div>
 
-    <!-- ภาพสินค้าแถวละ 3 ภาพ -->
+    <!-- ภาพสินค้าแถวละ 3 ภาพ
     <div class="container" style="margin-top:30px">
         <div class="row" id="qq">
             <div class="col-sm-4">
-                <img src="food/f1.jpg" class="rounded" alt="Cinque Terre" width="250"
-                    height="250">
+                <img src="food/f1.jpg" class="rounded" alt="Cinque Terre" width="250" height="250">
                 <h5>ปากเป็ดทอด</h5>
             </div>
             <div class="col-sm-4">
-                <img src="food/f2.jpg" class="rounded" alt="Cinque Terre" width="250"
-                    height="250">
+                <img src="food/f2.jpg" class="rounded" alt="Cinque Terre" width="250" height="250">
                 <h5>ไส้ตันทอด</h5>
             </div>
             <div class="col-sm-4">
@@ -144,7 +149,7 @@ if (!$conn) die("Connection failed: " . mysqli_connect_error());
         </div>
         <br><br><br>
         <div class="row" id="qq">
-            <div class="col-sm-4" >
+            <div class="col-sm-4">
                 <img src="food/f4.jpg" class="rounded" alt="Cinque Terre" width="250" height="250">
                 <h5>คอหมูย่าง</h5>
             </div>
@@ -172,10 +177,43 @@ if (!$conn) die("Connection failed: " . mysqli_connect_error());
                 <h5>ลาบหมู</h5>
             </div>
         </div>
+    </div> -->
+
+
+
+    <!-- ทำไมมันไม่ได้ TT^TT -->
+    <div id="star" class="container" style="display: none;">
+        <div class="row">
+            <?php
+            $sqlstar = "SELECT picproduct, thname, engname, price FROM
+            tbproduct where typeproduct = \"star\" ORDER BY productID ASC";
+            $conn->query("SET NAMES utf8");
+            $resultstar = $conn->query($sqlstar);
+            if ($resultstar->num_rows > 0) {
+                while ($row = $resultstar->fetch_assoc()) {
+                    ?>
+                    <div class="product-card-1p">
+                        <a href="./food/<?php echo $row["picproduct"]; ?>" data-fancybox="groupstar">
+                            <img src="./food/<?php echo $row["picproduct"]; ?>" class="col-sm-3" width="250" height="250"></a>
+
+                        <div id="qq" class="col-md-12"><?php echo $row["thname"]; ?></div>
+                    </div>
+            <?php
+                }
+            }
+            ?>
+        </div>
     </div>
+
+
+
+
+
+
     <br><br>
 
-<?php include('footer.php');?>
+    <?php include('footer.php'); ?>
 
 </body>
+
 </html>

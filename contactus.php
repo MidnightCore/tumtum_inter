@@ -1,8 +1,8 @@
-
 <!doctype html>
 <html>
+
 <head>
-    <title>About Us</title>
+    <title>Contact Us</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -10,8 +10,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Itim&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/aboutus.css">
-<style>
+    <style>
         #navfix {
             margin-left: 40px;
             font-size: 18px;
@@ -67,21 +68,26 @@
         #qq {
             color: rgb(255, 254, 254);
         }
-        #abt{
+
+        #abt {
             font-size: 20px;
         }
-    body,td,th {
-	font-family: Itim, cursive;
-}
-</style>
+
+        body,
+        td,
+        th {
+            font-family: Itim, cursive;
+        }
+    </style>
 </head>
+
 <body>
-<?php include('rsmenu.php');?>
-<br>
-<br>
-<br>
-<br>
-<div class="container">
+    <?php include('rsmenu.php'); ?>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container">
         <!--Section heading-->
         <h2 class="section-heading h1 pt-4">เกี่ยวกับเรา</h2>
         <!--Section description-->
@@ -109,71 +115,60 @@
         <section class="section pb-5">
             <!--Section heading-->
             <h2 class="section-heading h1 pt-4">ติดต่อเรา</h2>
-            <!--Section description-->
-            <!-- <p class="section-description pb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error
-                amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam eum porro a
-                pariatur accusamus veniam.</p> -->
 
-            <div class="row">
-                <!--Grid column-->
-                <div class="col-lg-5 mb-4">                    <!--Form with header-->
-                    <div class="card">
+            <div class="row"> 
+                
+            
+                <div class="col-lg-5 mb-4"><!--Grid column-->                  
+                    <div class="card"> <!--Form with header-->
                         <div class="card-body">
                             <!--Header-->
                             <div class="form-header blue accent-1">
                                 <h3><i class="fas fa-envelope"></i> Write to us:</h3>
                             </div>
-
                             <p>We'll write rarely, but with only the best content.</p>
-                            <br>
 
                             <!--Body-->
-                            <div class="md-form">
-                                <i class="fas fa-user prefix grey-text"></i>
-                                <input type="text" id="form-name" class="form-control">
-                                <label for="form-name">Your name</label>
-                            </div>
+                            <form action="server/addcontact.php" method="post" autocomplete="off">
+                                <div class="md-form">
+                                    <label for="form-name">Your name</label>
+                                    <i class="fas fa-user prefix grey-text"></i>
+                                    <input type="text" id="form-name" class="form-control" name="nameContact">
+                                </div>
 
-                            <div class="md-form">
-                                <i class="fas fa-envelope prefix grey-text"></i>
-                                <input type="text" id="form-email" class="form-control">
-                                <label for="form-email">Your email</label>
-                            </div>
+                                <div class="md-form">
+                                    <label for="form-address">Your address</label>
+                                    <i class="fas fa-tag prefix grey-text"></i>
+                                    <input type="text" id="form-address" class="form-control" name="address">
+                                </div>
 
-                            <div class="md-form">
-                                <i class="fas fa-tag prefix grey-text"></i>
-                                <input type="text" id="form-Subject" class="form-control">
-                                <label for="form-Subject">Subject</label>
-                            </div>
+                                <div class="md-form">
+                                    <label for="form-contact">Your contact</label>
+                                    <i class="fas fa-envelope prefix grey-text"></i>
+                                    <input type="text" id="form-contact" class="form-control" name="contactchannel">
+                                </div>
 
-                            <div class="md-form">
-                                <i class="fas fa-pencil-alt prefix grey-text"></i>
-                                <textarea id="form-text" class="form-control md-textarea" rows="3"></textarea>
-                                <label for="form-text">Icon Prefix</label>
-                            </div>
+                                <div class="md-form">
+                                    <label for="form-text">Content</label>
+                                    <i class="fas fa-pencil-alt prefix grey-text"></i>
+                                    <textarea id="form-text" class="form-control md-textarea" rows="3" name="description"></textarea>
+                                </div>
 
-                            <div class="text-center mt-4">
-                                <button class="btn btn-light-blue">Submit</button>
-                            </div>
-
+                                <div class="text-center mt-4">
+                                    <button type="submit" class="btn btn-light-blue">Submit</button>
+                                </div>
+                            </form>
                         </div>
+                    </div><!--End Form with header-->
+                </div><!--End Grid column-->
+                
 
-                    </div>
-                    <!--Form with header-->
-
-                </div>
-                <!--Grid column-->
-
-                <!--Grid column-->
-                <div class="col-lg-7">
-
+                
+                <div class="col-lg-7"><!--Grid column-->
                     <!--Google map-->
                     <div id="map-container-google-11" class="z-depth-1-half map-container-6" style="height: 400px">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3874.4272766440768!2d100.55967281419818!3d13.813362690307612!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29c454f39a4db%3A0x50da247e998aafff!2sUnion%20Mall!5e0!3m2!1sen!2sus!4v1568079011514!5m2!1sen!2sus"
-                            width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3874.4272766440768!2d100.55967281419818!3d13.813362690307612!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29c454f39a4db%3A0x50da247e998aafff!2sUnion%20Mall!5e0!3m2!1sen!2sus!4v1568079011514!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
                     </div><br>
-
                     <!--Buttons-->
                     <div class="row text-center">
                         <div class="col-md-4">
@@ -192,16 +187,17 @@
                             <p>tumtuminter@hotmail.com</p>
                         </div>
                     </div>
-
-                </div>
-                <!--Grid column-->
+                </div><!--End Grid column-->
+               
+                
             </div>
-        </section>
-        <!--Section: Contact v.1-->
+        </section><!--End Section: Contact v.1-->
+        
     </div>
 
 
-  
+
 </body>
+
 </html>
-<?php include('footer.php');?>
+<?php include('footer.php'); ?>

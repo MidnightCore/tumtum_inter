@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 16, 2019 at 06:35 AM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 5.6.35
+-- Generation Time: Nov 05, 2019 at 05:01 AM
+-- Server version: 10.3.16-MariaDB
+-- PHP Version: 7.3.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -42,14 +42,14 @@ CREATE TABLE `tbcontact` (
 --
 
 INSERT INTO `tbcontact` (`id`, `nameContact`, `address`, `contactchannel`, `description`, `datetimeContact`) VALUES
-(1, 'มานะ', '88 ดุสอต', 'mana@gmail.com', 'สั่งของ', '2019-10-16 10:17:23'),
-(2, 'ศิริชัย  ', '111 ลาดพร้าว  กรงเทพ', 'sirichai@mail.com , 089-2347899', 'เรื่องการจัดส่งสินค้่า', '2019-10-16 10:21:05'),
-(3, 'สุชาติ', '222', '0874-5554455', 'สั่งของ', '2019-10-16 10:22:51'),
-(4, 'พานิดา', '254 ', '081-3357746', 'สั่งของเพิ่ม', '2019-10-16 10:25:32'),
-(5, 'สันติ', '699', '065-9988844', 'สั่ง', '2019-10-16 10:47:48'),
-(6, 'สมหญิง', '897', '055-3554778', 'สอบถาม', '2019-10-16 10:50:37'),
-(7, 'วง', '222', '082-6697788', 'ส', '2019-10-16 10:53:48'),
-(8, 'มาลิณี', '897', '081-6657788', 'สั่ง', '2019-10-16 10:56:50');
+(1, 'เกียรติศักดิ์', '88/1', 'kts@gmail.com', 'สั่งของ', '2019-10-16 10:17:23'),
+(2, 'ศิริชัย  ', '88/2', 'sirichai@mail.com , 089-234-7899', 'ส่งสินค้่า', '2019-10-16 10:21:05'),
+(3, 'สุชาติ', '88/3', '087-555-4455', 'สั่งของ', '2019-10-16 10:22:51'),
+(4, 'พานิดา', '88/4', '081-335-7746', 'สั่งของเพิ่ม', '2019-10-16 10:25:32'),
+(5, 'สันติ', '88/5', '065-998-8844', 'สั่งของเพิ่ม', '2019-10-16 10:47:48'),
+(6, 'สมหญิง', '88/6', '055-355-4778', 'สอบถาม', '2019-10-16 10:50:37'),
+(7, 'วงศฏาพร', '88/7', '082-669-7788', 'สอบถาม', '2019-10-16 10:53:48'),
+(8, 'มาลิณี', '88/8', '081-665-7788', 'ส่งสินค้า', '2019-10-16 10:56:50');
 
 -- --------------------------------------------------------
 
@@ -71,10 +71,15 @@ CREATE TABLE `tbproduct` (
 --
 
 INSERT INTO `tbproduct` (`productID`, `picproduct`, `engname`, `thname`, `price`, `typeproduct`) VALUES
-(1, 'bun-pork1.jpg', 'pig suagesage bread ', 'ขนมปังไส้กรอกหมู', '25', 'star'),
-(2, 'cake4.jpg', 'VanilaCake ', 'เค๊กวนิลา', '49', 'star'),
-(3, 'bun-pork1.jpg', 'pig suagesage bread ', 'ขนมปังไส้กรอกหมู', '25', 'bread'),
-(4, 'cake4.jpg', 'VanilaCake ', 'เค๊กวนิลา', '49', 'cakepiece');
+(1, 'f1.jpg', '', 'ปากเป็ดทอด', '', 'star'),
+(2, 'f2.jpg', '', 'ไส้ตันทอด', '', 'star'),
+(3, 'f3.jpg', '', 'ปีกไก่ทอด', '', 'star'),
+(4, 'f4.jpg', '', 'คอหมูย่าง', '', 'star'),
+(5, 'f5.jpg', '', 'ไก่อบโอ่ง', '', 'star'),
+(6, 'f6.jpg', '', 'พล่ากุ้ง', '', 'star'),
+(7, 'f7.jpg', '', 'ยำผักบุ้งกรอบ', '', 'star'),
+(8, 'f8.jpg', '', 'ยำรวม', '', 'star'),
+(9, 'f9.jpg', '', 'ลาบหมู', '', 'star');
 
 --
 -- Indexes for dumped tables
@@ -106,7 +111,7 @@ ALTER TABLE `tbcontact`
 -- AUTO_INCREMENT for table `tbproduct`
 --
 ALTER TABLE `tbproduct`
-  MODIFY `productID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `productID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
