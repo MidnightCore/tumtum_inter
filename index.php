@@ -1,6 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+include('server/config.php');
+$conn = mysqli_connect(_SERVERNAME, _USERNAME, _PASSWORD,
+_DBNAME);
+if (!$conn) die("Connection failed: " . mysqli_connect_error());
+?> 
 
+
+
+<!doctype html>
+<html>
 <head>
     <title>TumTum Inter</title>
     <meta charset="utf-8">
@@ -11,7 +19,21 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Itim&display=swap" rel="stylesheet">
 
-    <style>
+
+<script>
+	$(document).ready(function() {
+		hideAll();
+	$('#star').show();
+ 		$('.show-star').click(function() {
+ 			hideAll();
+			$('#star').fadeIn(999);
+		 });
+	 });
+	function hideAll() {}
+</script>
+ 
+ 
+     <style>
         #navfix {
             margin-left: 40px;
             font-size: 18px;
@@ -40,10 +62,6 @@
         .jumbotron {
             background-image: url("images/chili.jpg");
             background-size: cover;
-            /* ทำภาพเป็น Parallax */
-            /* background-attachment: fixed; */
-            /* background-position: center; */
-            /* background-repeat: no-repeat;  */
         }
 
         #covertext {
@@ -60,34 +78,19 @@
             background-image: url("images/bs.jpg");
             background-size: cover;
             margin-top: -10px;
-            /* margin-bottom: -20px; */
         }
         #qq{
             color: rgb(255, 254, 254);
         }
     </style>
+ 
 </head>
 
 <body>
-    <nav id="aaa" class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <a class="navbar-brand" href="#">
-            <img src="images/iTopPlus831835100233.png" alt="logo" style="width:50%;">
-        </a>
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" id="navfix3" href="tumtum_inter.html">หน้าแรก</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="navfix" href="menu.html">เมนูอาหาร</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="navfix" href="aboutus.html">เกี่ยวกับเรา</a>
-            </li>
-        </ul>
-    </nav><br>
+<?php include('rsmenu.php');?>
 
 
-    <div class="container">
+ <div class="container">
         <h1 style="color: rgb(255, 253, 253)">โปรโมชั่น!!</h1>
         <div id="demo" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
@@ -172,36 +175,7 @@
     </div>
     <br><br>
 
+<?php include('footer.php');?>
 
-
-    <!-- Footer -->
-    <br>
-    <footer class="footer font-small" style="color:white"><br>
-            <div class="container">
-                    <div class="row">
-                        <div class="col l6 s12">
-                            <h5>ที่ตั้งร้าน ตำตำ อินเตอร์</h5>
-                            <p>ศูนย์การค้า ยู เนี่ยน มอลล์ ชั้น 4 ถนน ลาดพร้าว แขวงจอมพล เขตจตุจักร กรุงเทพมหานคร 10900</p>
-                        </div>
-                        <div class="col l3 s12">
-                        </div>
-                        <div class="col l3 s12">
-                            <h5 class="white-text">ติดต่อ ตำตำ อินเตอร์</h5>
-                            <ul>
-                                <li><a href="#!">โทร. 085-339-9714</a></li>
-                                <li><a href="#!">tumtuminter@hotmail.com</a></li>
-                                <li><a href="https://www.facebook.com/ตำตำ-อินเตอร์-ยูเนี่ยนมอลล์-713151238716338/" target="_blank">Facebook TumTum Inter</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-copyright">
-                    <div class="container">
-                        Made by <a class="brown-text text-lighten-3" href="#">TumTum Inter</a>
-                    </div>
-                </div>
-    </footer>
-    <!-- Footer -->
 </body>
-
 </html>

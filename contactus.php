@@ -1,6 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
 
+<!doctype html>
+<html>
 <head>
     <title>About Us</title>
     <meta charset="utf-8">
@@ -11,7 +11,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Itim&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/aboutus.css">
-    <style>
+<style>
         #navfix {
             margin-left: 40px;
             font-size: 18px;
@@ -70,29 +70,18 @@
         #abt{
             font-size: 20px;
         }
-    </style>
+    body,td,th {
+	font-family: Itim, cursive;
+}
+</style>
 </head>
-
 <body>
-    <nav id="aaa" class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <a class="navbar-brand" href="#">
-            <img src="images/iTopPlus831835100233.png" alt="logo" style="width:50%;">
-        </a>
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" id="navfix3" href="tumtum_inter.html">หน้าแรก</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="navfix" href="menu.html">เมนูอาหาร</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="navfix" href="aboutus.html">เกี่ยวกับเรา</a>
-            </li>
-        </ul>
-    </nav><br>
-
-
-    <div class="container">
+<?php include('rsmenu.php');?>
+<br>
+<br>
+<br>
+<br>
+<div class="container">
         <!--Section heading-->
         <h2 class="section-heading h1 pt-4">เกี่ยวกับเรา</h2>
         <!--Section description-->
@@ -212,35 +201,7 @@
     </div>
 
 
-    <!-- Footer -->
-    <br>
-    <footer class="footer font-small" style="color:white"><br>
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5>ที่ตั้งร้าน ตำตำ อินเตอร์</h5>
-                    <p>ศูนย์การค้า ยู เนี่ยน มอลล์ ชั้น 4 ถนน ลาดพร้าว แขวงจอมพล เขตจตุจักร กรุงเทพมหานคร 10900</p>
-                </div>
-                <div class="col l3 s12">
-                </div>
-                <div class="col l3 s12">
-                    <h5 class="white-text">ติดต่อ ตำตำ อินเตอร์</h5>
-                    <ul>
-                        <li><a href="#!">โทร. 085-339-9714</a></li>
-                        <li><a href="#!">tumtuminter@hotmail.com</a></li>
-                        <li><a href="https://www.facebook.com/ตำตำ-อินเตอร์-ยูเนี่ยนมอลล์-713151238716338/"
-                                target="_blank">Facebook TumTum Inter</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="footer-copyright">
-            <div class="container">
-                Made by <a class="brown-text text-lighten-3" href="#">TumTum Inter</a>
-            </div>
-        </div>
-    </footer>
-    <!-- Footer -->
+  
 </body>
-
 </html>
+<?php include('footer.php');?>
