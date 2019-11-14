@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 4.8.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 05, 2019 at 05:42 AM
--- Server version: 10.3.16-MariaDB
--- PHP Version: 7.3.7
+-- Generation Time: Nov 06, 2019 at 09:09 AM
+-- Server version: 10.1.31-MariaDB
+-- PHP Version: 5.6.35
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,27 @@ SET time_zone = "+00:00";
 --
 -- Database: `bakerydata`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admintb`
+--
+
+CREATE TABLE `admintb` (
+  `AdminID` int(5) UNSIGNED ZEROFILL NOT NULL,
+  `username` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `LoginStatusad` int(1) NOT NULL,
+  `LastUpdatead` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `admintb`
+--
+
+INSERT INTO `admintb` (`AdminID`, `username`, `password`, `LoginStatusad`, `LastUpdatead`) VALUES
+(78999, 'admin', '123999', 0, '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -42,15 +63,14 @@ CREATE TABLE `tbcontact` (
 --
 
 INSERT INTO `tbcontact` (`id`, `nameContact`, `address`, `contactchannel`, `description`, `datetimeContact`) VALUES
-(1, 'เกียรติศักดิ์', '88/1', 'kts@gmail.com', 'สั่งของ', '2019-10-16 10:17:23'),
-(2, 'ศิริชัย  ', '88/2', 'sirichai@mail.com , 089-234-7899', 'ส่งสินค้่า', '2019-10-16 10:21:05'),
-(3, 'สุชาติ', '88/3', '087-555-4455', 'สั่งของ', '2019-10-16 10:22:51'),
-(4, 'พานิดา', '88/4', '081-335-7746', 'สั่งของเพิ่ม', '2019-10-16 10:25:32'),
-(5, 'สันติ', '88/5', '065-998-8844', 'สั่งของเพิ่ม', '2019-10-16 10:47:48'),
-(6, 'สมหญิง', '88/6', '055-355-4778', 'สอบถาม', '2019-10-16 10:50:37'),
-(7, 'วงศฏาพร', '88/7', '082-669-7788', 'สอบถาม', '2019-10-16 10:53:48'),
-(8, 'มาลิณี', '88/8', '081-665-7788', 'ส่งสินค้า', '2019-10-16 10:56:50'),
-(9, 'อภิศฎา', '88/9', '099-999-9999', 'สั่งของเพิ่ม', '2019-11-05 11:39:23');
+(1, 'มานะ', '88 ดุสอต', 'mana@gmail.com', 'สั่งของ', '2019-10-16 10:17:23'),
+(2, 'ศิริชัย  ', '111 ลาดพร้าว  กรงเทพ', 'sirichai@mail.com , 089-2347899', 'เรื่องการจัดส่งสินค้่า', '2019-10-16 10:21:05'),
+(3, 'สุชาติ', '222', '0874-5554455', 'สั่งของ', '2019-10-16 10:22:51'),
+(4, 'พานิดา', '254 ', '081-3357746', 'สั่งของเพิ่ม', '2019-10-16 10:25:32'),
+(5, 'สันติ', '699', '065-9988844', 'สั่ง', '2019-10-16 10:47:48'),
+(6, 'สมหญิง', '897', '055-3554778', 'สอบถาม', '2019-10-16 10:50:37'),
+(7, 'วง', '222', '082-6697788', 'ส', '2019-10-16 10:53:48'),
+(8, 'มาลิณี', '897', '081-6657788', 'สั่ง', '2019-10-16 10:56:50');
 
 -- --------------------------------------------------------
 
@@ -72,19 +92,20 @@ CREATE TABLE `tbproduct` (
 --
 
 INSERT INTO `tbproduct` (`productID`, `picproduct`, `engname`, `thname`, `price`, `typeproduct`) VALUES
-(1, 'f1.jpg', '', 'ปากเป็ดทอด', '', 'star'),
-(2, 'f2.jpg', '', 'ไส้ตันทอด', '', 'star'),
-(3, 'f3.jpg', '', 'ปีกไก่ทอด', '', 'star'),
-(4, 'f4.jpg', '', 'คอหมูย่าง', '', 'star'),
-(5, 'f5.jpg', '', 'ไก่อบโอ่ง', '', 'star'),
-(6, 'f6.jpg', '', 'พล่ากุ้ง', '', 'star'),
-(7, 'f7.jpg', '', 'ยำผักบุ้งกรอบ', '', 'star'),
-(8, 'f8.jpg', '', 'ยำรวม', '', 'star'),
-(9, 'f9.jpg', '', 'ลาบหมู', '', 'star');
+(1, 'bun-pork1.jpg', 'pig suagesage bread ', 'ขนมปังไส้กรอกหมู', '25', 'star'),
+(2, 'cake4.jpg', 'VanilaCake ', 'เค๊กวนิลา', '49', 'star'),
+(3, 'bun-pork1.jpg', 'pig suagesage bread ', 'ขนมปังไส้กรอกหมู', '25', 'bread'),
+(4, 'cake4.jpg', 'VanilaCake ', 'เค๊กวนิลา', '49', 'cakepiece');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admintb`
+--
+ALTER TABLE `admintb`
+  ADD PRIMARY KEY (`AdminID`);
 
 --
 -- Indexes for table `tbcontact`
@@ -106,13 +127,13 @@ ALTER TABLE `tbproduct`
 -- AUTO_INCREMENT for table `tbcontact`
 --
 ALTER TABLE `tbcontact`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tbproduct`
 --
 ALTER TABLE `tbproduct`
-  MODIFY `productID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `productID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

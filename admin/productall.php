@@ -1,14 +1,35 @@
 <?php
-include('server/config.php');
-$conn = mysqli_connect(_SERVERNAME, _USERNAME, _PASSWORD,
-_DBNAME);
-if (!$conn) die("Connection failed: " . mysqli_connect_error());
-?> 
+session_start();
+require_once("adminconnect.php");
+if (!isset($_SESSION['AdminID'])) {
+	echo "Please Login!";
+	exit();
+}
+
+//*** Update Last Stay in Login System
+$sql = "UPDATE admintb SET LastUpdatead = NOW() WHERE AdminID = '" . $_SESSION["AdminID"] . "' ";
+$query = mysqli_query($con, $sql);
+mysqli_set_charset($con, "utf8");
+
+//*** Get User Login
+$strSQL = "SELECT * FROM admintb WHERE AdminID = '" . $_SESSION['AdminID'] . "' ";
+$objQuery = mysqli_query($con, $strSQL);
+$objResult = mysqli_fetch_array($objQuery, MYSQLI_ASSOC);
+mysqli_set_charset($con, "utf8");
+
+include('../server/config.php');
+$conn = mysqli_connect(_SERVERNAME, _USERNAME, _PASSWORD, _DBNAME);
+if (!$conn) {
+	die("Connection failed: " . mysqli_connect_error());
+}
+?>
 <!doctype html>
 <html>
+
 <head>
-    <title>Menu</title>
-    <meta charset="utf-8">
+	<meta charset="utf-8">
+	<title>productall</title>
+	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -16,77 +37,17 @@ if (!$conn) die("Connection failed: " . mysqli_connect_error());
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Itim&display=swap" rel="stylesheet">
    
-    <link rel="stylesheet" href="css/menu.css">
-    <style>
-        #navfix {
-            margin-left: 40px;
-            font-size: 18px;
-        }
-
-        #navfix2 {
-            margin-left: 40px;
-        }
-
-        #navfix3 {
-            font-size: 18px;
-            margin-left: 50px;
-        }
-
-        body {
-            background-color: #fafafa;
-           
-        } 
-
-        .footer {
-            background-image: url("images/bs.jpg");
-            background-size: cover;
-        }
-
-        .jumbotron {
-            background-image: url("chili.jpg");
-            background-size: cover;
-
-            /* ทำภาพเป็น Parallax */
-            /* background-attachment: fixed; */
-            /* background-position: center; */
-            /* background-repeat: no-repeat;  */
-        }
-
-        #covertext {
-            color: white;
-            text-size-adjust: 50px;
-        }
-
-        .carousel-inner img {
-            width: 100%;
-            height: 100%;
-        }
-
-        #aaa {
-            background-image: url("images/bs.jpg");
-            background-size: cover;
-            margin-top: -10px;
-            /* margin-bottom: -20px; */
-        }
-        #qq{
-            color: rgb(255, 254, 254);
-        }
-    </style>
 </head>
 
 <body>
-<?php include('rsmenu.php');?>
- <!--หน้าต่างหมวดอาหาร-->
-    <section id="our_menu" class="pb-5">
+<div class="text-center mt-4">
+   <a class="btn btn-light-blue" href="admindetail.php">กลับหน้าหลัก</a>
+</div>
+<!--หน้าต่างหมวดอาหาร-->
+
+<section id="our_menu" class="pb-5">
 		<div class="container">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="page_title text-center mb-4">
-						<h1>our menu</h1>
-						<div class="single_line"></div>
-					</div>
-				</div>
-			</div>
+		
 			<div class="row">
 				<ul class="nav nav-tabs menu_tab mb-4" id="myTab" role="tablist">
 					<li class="nav-item">
@@ -129,8 +90,8 @@ if (!$conn) die("Connection failed: " . mysqli_connect_error());
    					?>
    						<div class="col-md-6">
 							<div class="single_menu">
-    						<a href="foodmenu/tum/<?php echo $row["picproduct"];?>"data-fancybox="groupstar"data-caption="<?php echo $row["engname"];?><?php echo $row["thname"];?> ราคา<?php echo $row["price"];?> บาท" datawidth="400" data-height="400">
-							   <img src="foodmenu/tum/<?php echo $row["picproduct"] ;?>" class=" col-xs-12"></a>
+    						<a href="../foodmenu/tum/<?php echo $row["picproduct"];?>"data-fancybox="groupstar"data-caption="<?php echo $row["engname"];?><?php echo $row["thname"];?> ราคา<?php echo $row["price"];?> บาท" datawidth="200" data-height="200">
+							   <img src="../foodmenu/tum/<?php echo $row["picproduct"] ;?>" class=" col-xs-12"></a>
 							   <br><br>
    							<div class="menu_content"><?php echo $row["thname"];?></div>
    							<div class="menu_content"><?php echo $row["price"];?>.</div>
@@ -156,8 +117,8 @@ if (!$conn) die("Connection failed: " . mysqli_connect_error());
    					?>
    						<div class="col-md-6">
 							<div class="single_menu">
-    						<a href="foodmenu/tom/<?php echo $row["picproduct"];?>"data-fancybox="groupstar"data-caption="<?php echo $row["engname"];?><?php echo $row["thname"];?> ราคา<?php echo $row["price"];?> บาท" datawidth="400" data-height="400">
-							   <img src="foodmenu/tom/<?php echo $row["picproduct"] ;?>" class=" col-xs-12"></a>
+    						<a href="../foodmenu/tom/<?php echo $row["picproduct"];?>"data-fancybox="groupstar"data-caption="<?php echo $row["engname"];?><?php echo $row["thname"];?> ราคา<?php echo $row["price"];?> บาท" datawidth="400" data-height="400">
+							   <img src="../foodmenu/tom/<?php echo $row["picproduct"] ;?>" class=" col-xs-12"></a>
 							   <br><br>
    							<div class="menu_content"><?php echo $row["thname"];?></div>
    							<div class="menu_content"><?php echo $row["price"];?>.</div>
@@ -183,8 +144,8 @@ if (!$conn) die("Connection failed: " . mysqli_connect_error());
    					?>
    						<div class="col-md-6">
 							<div class="single_menu">
-    						<a href="foodmenu/larb/<?php echo $row["picproduct"];?>"data-fancybox="groupstar"data-caption="<?php echo $row["engname"];?><?php echo $row["thname"];?> ราคา<?php echo $row["price"];?> บาท" datawidth="400" data-height="400">
-							   <img src="foodmenu/larb/<?php echo $row["picproduct"] ;?>" class=" col-xs-12"></a>
+    						<a href="../foodmenu/larb/<?php echo $row["picproduct"];?>"data-fancybox="groupstar"data-caption="<?php echo $row["engname"];?><?php echo $row["thname"];?> ราคา<?php echo $row["price"];?> บาท" datawidth="400" data-height="400">
+							   <img src="../foodmenu/larb/<?php echo $row["picproduct"] ;?>" class=" col-xs-12"></a>
 							   <br><br>
    							<div class="menu_content"><?php echo $row["thname"];?></div>
    							<div class="menu_content"><?php echo $row["price"];?>.</div>
@@ -210,8 +171,8 @@ if (!$conn) die("Connection failed: " . mysqli_connect_error());
    					?>
    						<div class="col-md-6">
 							<div class="single_menu">
-    						<a href="foodmenu/yarm/<?php echo $row["picproduct"];?>"data-fancybox="groupstar"data-caption="<?php echo $row["engname"];?><?php echo $row["thname"];?> ราคา<?php echo $row["price"];?> บาท" datawidth="400" data-height="400">
-							   <img src="foodmenu/yarm/<?php echo $row["picproduct"] ;?>" class=" col-xs-12"></a>
+    						<a href="../foodmenu/yarm/<?php echo $row["picproduct"];?>"data-fancybox="groupstar"data-caption="<?php echo $row["engname"];?><?php echo $row["thname"];?> ราคา<?php echo $row["price"];?> บาท" datawidth="400" data-height="400">
+							   <img src="../foodmenu/yarm/<?php echo $row["picproduct"] ;?>" class=" col-xs-12"></a>
 							   <br><br>
    							<div class="menu_content"><?php echo $row["thname"];?></div>
    							<div class="menu_content"><?php echo $row["price"];?>.</div>
@@ -237,8 +198,8 @@ if (!$conn) die("Connection failed: " . mysqli_connect_error());
    					?>
    						<div class="col-md-6">
 							<div class="single_menu">
-    						<a href="foodmenu/fires/<?php echo $row["picproduct"];?>"data-fancybox="groupstar"data-caption="<?php echo $row["engname"];?><?php echo $row["thname"];?> ราคา<?php echo $row["price"];?> บาท" datawidth="400" data-height="400">
-							   <img src="foodmenu/fires/<?php echo $row["picproduct"] ;?>" class=" col-xs-12"></a>
+    						<a href="../foodmenu/fires/<?php echo $row["picproduct"];?>"data-fancybox="groupstar"data-caption="<?php echo $row["engname"];?><?php echo $row["thname"];?> ราคา<?php echo $row["price"];?> บาท" datawidth="400" data-height="400">
+							   <img src="../foodmenu/fires/<?php echo $row["picproduct"] ;?>" class=" col-xs-12"></a>
 							   <br><br>
    							<div class="menu_content"><?php echo $row["thname"];?></div>
    							<div class="menu_content"><?php echo $row["price"];?>.</div>
@@ -264,8 +225,8 @@ if (!$conn) die("Connection failed: " . mysqli_connect_error());
    					?>
    						<div class="col-md-6">
 							<div class="single_menu">
-    						<a href="foodmenu/drink/<?php echo $row["picproduct"];?>"data-fancybox="groupstar"data-caption="<?php echo $row["engname"];?><?php echo $row["thname"];?> ราคา<?php echo $row["price"];?> บาท" datawidth="400" data-height="400">
-							   <img src="foodmenu/drink/<?php echo $row["picproduct"] ;?>" class=" col-xs-12"></a>
+    						<a href="../foodmenu/drink/<?php echo $row["picproduct"];?>"data-fancybox="groupstar"data-caption="<?php echo $row["engname"];?><?php echo $row["thname"];?> ราคา<?php echo $row["price"];?> บาท" datawidth="400" data-height="400">
+							   <img src="../foodmenu/drink/<?php echo $row["picproduct"] ;?>" class=" col-xs-12"></a>
 							   <br><br>
    							<div class="menu_content"><?php echo $row["thname"];?></div>
    							<div class="menu_content"><?php echo $row["price"];?>.</div>
@@ -282,6 +243,7 @@ if (!$conn) die("Connection failed: " . mysqli_connect_error());
 			</div>
 		</div>
 	</section>
-<?php include('footer.php');?>
+
 </body>
+
 </html>
