@@ -1,5 +1,5 @@
 <?php
-include('server/config.php');
+include('../server/config.php');
 $conn = mysqli_connect(_SERVERNAME, _USERNAME, _PASSWORD, _DBNAME);
 if (!$conn) {
 	die("Connection failed: " . mysqli_connect_error());

@@ -35,14 +35,14 @@ mysqli_set_charset($con, "utf8");
       <td width="174">&nbsp;</td>
       <td width="136">&nbsp;</td>
       <td width="142">&nbsp;</td>
-      <td width="119">&nbsp;</td>
+      
       <td width="167"><a href="logoutadmin.php">ออกจากระบบ</a></td>
     </tr>
     <tr>
       <td height="57"><a href="contactusall.php">ดูรายการติดต่อสอบถาม</a></td>
       <td><a href="productall.php">ดูรายการสินค้ารวม</a></td>
       <td><a href="insertproduct.php">เพิ่มรายการสินค้า</a></td>
-      <td><a href="productforedit.php">แก้รายการสินค้า</a></td>
+      
       <td><a href="productfordelete.php">ลบรายการสินค้า</a></td>
     </tr>
   </table>

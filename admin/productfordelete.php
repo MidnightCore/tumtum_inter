@@ -38,7 +38,7 @@ if (!$conn) {
 			<td height="35"><a href="admindetail.php">กลับสู่หน้าหลัก</a></td>
 		</tr>
 		<tr>
-			<td width="350" align="center"> ภาพสินค้า</td>
+			
 			<td width="150" align="center"> รายการสินค้า</td>
 			<td width="150" align="center"> ราคา</td>
 			<td width="150" align="center"> ลบรายการสินค้า</td>
@@ -54,7 +54,7 @@ if (!$conn) {
 			?>
 
 			<tr>
-				<td width="350" align="center"><img src="./images/product/<?php echo $row["picproduct"]; ?>" width="270" height="300" /></td>
+				
 				<td width="150" align="center"><?php echo $row["thname"]; ?></td>
 				<td width="150" align="center"><?php echo $row["price"]; ?></td>
 				<td width="150" align="center"><a href="deleteproduct.php?productID=<?php echo $row["productID"]; ?>">ลบข้อมูล</a></td>
