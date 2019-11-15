@@ -1,28 +1,13 @@
-<?php
-/*session_start();
-session_destroy();
-$palm = 0;
-if (isset($_GET['alert'])) {
-    $palm = $_GET['alert'];
-}
-if ($palm == 1) {
-    echo "<script>alert('username หรือ password ผิดค่ะกรุณากรอกใหม่');history.back();</script>";
-} else if ($palm == 2) {
-    echo "<script>alert('คุณไม่มีสิทธิ์เข้าถึงค่ะ');history.back();</script>";
-}*/
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Login</title>
+    <title>Admin Login</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link  href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link  href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link  href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     
@@ -60,7 +45,7 @@ if ($palm == 1) {
 <body>
     <div class="container">
         <div class="row"><br><br><br>
-            <form action="checkadmin.php" method="POST" id="palm" name="palm">
+            <form action="checkadmin.php" method="POST">
                 <div class="row">
                     <div class="col s12 m6 offset-m3">
                         <div class="card center-align mg">
@@ -82,14 +67,12 @@ if ($palm == 1) {
                                         </div>
                                     </div>
                                 </div>
-                                <!-- <a href="index.html" class="btn pulse waves-effect waves-light" name="action">Login
-                                    <i class="material-icons right">done</i>
-                                </a> -->
-
-                                <button type="submit" class="btn pulse waves-effect orange accent-4" name="action">Login
+                                <button type="submit" class="btn pulse waves-effect orange accent-4" name="action">เข้าสู่ระบบ
                                     <i class="material-icons right">done</i>
                                 </button>
-
+                                <button type="reset" class="btn waves-effect red darken-4" name="action">ลบข้อมูล
+                                    <i class="material-icons right">delete</i>
+                                </button>
                             </div>
                         </div>
                     </div>

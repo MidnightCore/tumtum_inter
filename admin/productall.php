@@ -28,26 +28,36 @@ if (!$conn) {
 
 <head>
 	<meta charset="utf-8">
-	<title>productall</title>
+	<title>Product All</title>
 	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Itim&display=swap" rel="stylesheet">
-   
+	<link  rel="stylesheet" href="../css/menu.css">
+	<style>
+		body {
+			/* background-image: url("../images/chili.jpg"); */
+			background-color: cornsilk;
+			background-size: initial;
+			width: 100vw;
+			height: 100vh;
+			font-family: 'Itim', cursive;
+		}
+	</style>
 </head>
 
 <body>
-<div class="text-center mt-4">
-   <a class="btn btn-light-blue" href="admindetail.php">กลับหน้าหลัก</a>
-</div>
-<!--หน้าต่างหมวดอาหาร-->
+	<div class="container">
+		<div class="text-center mt-4">
+			<a class="btn btn-outline-dark" href="admindetail2.php">กลับหน้าหลัก</a>
+		</div><br>
 
-<section id="our_menu" class="pb-5">
-		<div class="container">
-		
+		<!--หน้าต่างหมวดอาหาร-->
+		<section id="our_menu" class="pb-5">
+
 			<div class="row">
 				<ul class="nav nav-tabs menu_tab mb-4" id="myTab" role="tablist">
 					<li class="nav-item">
@@ -69,8 +79,6 @@ if (!$conn) {
 						<a class="nav-link" id="drink-tab" data-toggle="tab" href="#drink" role="tab">เครื่องดื่ม</a>
 					</li>
 				</ul>
-
-
 			</div>
 
 
@@ -79,170 +87,170 @@ if (!$conn) {
 				<div class="tab-content col-lg-12" id="myTabContent">
 					<!-- ตำ -->
 					<div id="tum" class="tab-pane fade" role="tabpanel" aria-labelledby="tum-tab">
-					<div class="row">
-    				<?php
-	  					$sqlstar = "SELECT picproduct, thname, price FROM
+						<div class="row">
+							<?php
+							$sqlstar = "SELECT picproduct, thname, price FROM
     					tbproduct where typeproduct = \"tum\" ORDER BY productID ASC";
-      					$conn->query("SET NAMES utf8");
-     					$resultstar = $conn->query($sqlstar);
-     					if ($resultstar->num_rows > 0) {
-     					while($row = $resultstar->fetch_assoc()) {
-   					?>
-   						<div class="col-md-6">
-							<div class="single_menu">
-    						<a href="../foodmenu/tum/<?php echo $row["picproduct"];?>"data-fancybox="groupstar"data-caption="<?php echo $row["engname"];?><?php echo $row["thname"];?> ราคา<?php echo $row["price"];?> บาท" datawidth="200" data-height="200">
-							   <img src="../foodmenu/tum/<?php echo $row["picproduct"] ;?>" class=" col-xs-12"></a>
-							   <br><br>
-   							<div class="menu_content"><?php echo $row["thname"];?></div>
-   							<div class="menu_content"><?php echo $row["price"];?>.</div>
-							</div>
-  						</div> 
-    					<?php
-       						}
-     						}
-     					?>  
-					</div>
+							$conn->query("SET NAMES utf8");
+							$resultstar = $conn->query($sqlstar);
+							if ($resultstar->num_rows > 0) {
+								while ($row = $resultstar->fetch_assoc()) {
+									?>
+									<div class="col-md-6">
+										<div class="single_menu">
+											<a href="../foodmenu/tum/<?php echo $row["picproduct"]; ?>" data-fancybox="groupstar" data-caption="<?php echo $row["engname"]; ?><?php echo $row["thname"]; ?> ราคา<?php echo $row["price"]; ?> บาท" datawidth="200" data-height="200">
+												<img src="../foodmenu/tum/<?php echo $row["picproduct"]; ?>" class=" col-xs-12"></a>
+											<br><br>
+											<div class="menu_content"><?php echo $row["thname"]; ?></div>
+											<div class="menu_content"><?php echo $row["price"]; ?>.</div>
+										</div>
+									</div>
+							<?php
+								}
+							}
+							?>
+						</div>
 					</div>
 
 					<!-- ต้ม -->
 					<div id="tom" class="tab-pane fade" role="tabpanel" aria-labelledby="tom-tab">
-					<div class="row">
-    				<?php
-	  					$sqlstar = "SELECT picproduct, thname, price FROM
+						<div class="row">
+							<?php
+							$sqlstar = "SELECT picproduct, thname, price FROM
     					tbproduct where typeproduct = \"tom\" ORDER BY productID ASC";
-      					$conn->query("SET NAMES utf8");
-     					$resultstar = $conn->query($sqlstar);
-     					if ($resultstar->num_rows > 0) {
-     					while($row = $resultstar->fetch_assoc()) {
-   					?>
-   						<div class="col-md-6">
-							<div class="single_menu">
-    						<a href="../foodmenu/tom/<?php echo $row["picproduct"];?>"data-fancybox="groupstar"data-caption="<?php echo $row["engname"];?><?php echo $row["thname"];?> ราคา<?php echo $row["price"];?> บาท" datawidth="400" data-height="400">
-							   <img src="../foodmenu/tom/<?php echo $row["picproduct"] ;?>" class=" col-xs-12"></a>
-							   <br><br>
-   							<div class="menu_content"><?php echo $row["thname"];?></div>
-   							<div class="menu_content"><?php echo $row["price"];?>.</div>
-							</div>
-  						</div> 
-    					<?php
-       						}
-     						}
-     					?>  
-					</div>
+							$conn->query("SET NAMES utf8");
+							$resultstar = $conn->query($sqlstar);
+							if ($resultstar->num_rows > 0) {
+								while ($row = $resultstar->fetch_assoc()) {
+									?>
+									<div class="col-md-6">
+										<div class="single_menu">
+											<a href="../foodmenu/tom/<?php echo $row["picproduct"]; ?>" data-fancybox="groupstar" data-caption="<?php echo $row["engname"]; ?><?php echo $row["thname"]; ?> ราคา<?php echo $row["price"]; ?> บาท" datawidth="400" data-height="400">
+												<img src="../foodmenu/tom/<?php echo $row["picproduct"]; ?>" class=" col-xs-12"></a>
+											<br><br>
+											<div class="menu_content"><?php echo $row["thname"]; ?></div>
+											<div class="menu_content"><?php echo $row["price"]; ?>.</div>
+										</div>
+									</div>
+							<?php
+								}
+							}
+							?>
+						</div>
 					</div>
 
 					<!-- ลาบ -->
 					<div id="larb" class="tab-pane fade" role="tabpanel" aria-labelledby="larb-tab">
-					<div class="row">
-    				<?php
-	  					$sqlstar = "SELECT picproduct, thname, price FROM
+						<div class="row">
+							<?php
+							$sqlstar = "SELECT picproduct, thname, price FROM
     					tbproduct where typeproduct = \"larb\" ORDER BY productID ASC";
-      					$conn->query("SET NAMES utf8");
-     					$resultstar = $conn->query($sqlstar);
-     					if ($resultstar->num_rows > 0) {
-     					while($row = $resultstar->fetch_assoc()) {
-   					?>
-   						<div class="col-md-6">
-							<div class="single_menu">
-    						<a href="../foodmenu/larb/<?php echo $row["picproduct"];?>"data-fancybox="groupstar"data-caption="<?php echo $row["engname"];?><?php echo $row["thname"];?> ราคา<?php echo $row["price"];?> บาท" datawidth="400" data-height="400">
-							   <img src="../foodmenu/larb/<?php echo $row["picproduct"] ;?>" class=" col-xs-12"></a>
-							   <br><br>
-   							<div class="menu_content"><?php echo $row["thname"];?></div>
-   							<div class="menu_content"><?php echo $row["price"];?>.</div>
-							</div>
-  						</div> 
-    					<?php
-       						}
-     						}
-     					?>  
-					</div>
+							$conn->query("SET NAMES utf8");
+							$resultstar = $conn->query($sqlstar);
+							if ($resultstar->num_rows > 0) {
+								while ($row = $resultstar->fetch_assoc()) {
+									?>
+									<div class="col-md-6">
+										<div class="single_menu">
+											<a href="../foodmenu/larb/<?php echo $row["picproduct"]; ?>" data-fancybox="groupstar" data-caption="<?php echo $row["engname"]; ?><?php echo $row["thname"]; ?> ราคา<?php echo $row["price"]; ?> บาท" datawidth="400" data-height="400">
+												<img src="../foodmenu/larb/<?php echo $row["picproduct"]; ?>" class=" col-xs-12"></a>
+											<br><br>
+											<div class="menu_content"><?php echo $row["thname"]; ?></div>
+											<div class="menu_content"><?php echo $row["price"]; ?>.</div>
+										</div>
+									</div>
+							<?php
+								}
+							}
+							?>
+						</div>
 					</div>
 
 					<!-- ยำ -->
 					<div id="yarm" class="tab-pane fade" role="tabpanel" aria-labelledby="yarm-tab">
-					<div class="row">
-    				<?php
-	  					$sqlstar = "SELECT picproduct, thname, price FROM
+						<div class="row">
+							<?php
+							$sqlstar = "SELECT picproduct, thname, price FROM
     					tbproduct where typeproduct = \"yarm\" ORDER BY productID ASC";
-      					$conn->query("SET NAMES utf8");
-     					$resultstar = $conn->query($sqlstar);
-     					if ($resultstar->num_rows > 0) {
-     					while($row = $resultstar->fetch_assoc()) {
-   					?>
-   						<div class="col-md-6">
-							<div class="single_menu">
-    						<a href="../foodmenu/yarm/<?php echo $row["picproduct"];?>"data-fancybox="groupstar"data-caption="<?php echo $row["engname"];?><?php echo $row["thname"];?> ราคา<?php echo $row["price"];?> บาท" datawidth="400" data-height="400">
-							   <img src="../foodmenu/yarm/<?php echo $row["picproduct"] ;?>" class=" col-xs-12"></a>
-							   <br><br>
-   							<div class="menu_content"><?php echo $row["thname"];?></div>
-   							<div class="menu_content"><?php echo $row["price"];?>.</div>
-							</div>
-  						</div> 
-    					<?php
-       						}
-     						}
-     					?>  
+							$conn->query("SET NAMES utf8");
+							$resultstar = $conn->query($sqlstar);
+							if ($resultstar->num_rows > 0) {
+								while ($row = $resultstar->fetch_assoc()) {
+									?>
+									<div class="col-md-6">
+										<div class="single_menu">
+											<a href="../foodmenu/yarm/<?php echo $row["picproduct"]; ?>" data-fancybox="groupstar" data-caption="<?php echo $row["engname"]; ?><?php echo $row["thname"]; ?> ราคา<?php echo $row["price"]; ?> บาท" datawidth="400" data-height="400">
+												<img src="../foodmenu/yarm/<?php echo $row["picproduct"]; ?>" class=" col-xs-12"></a>
+											<br><br>
+											<div class="menu_content"><?php echo $row["thname"]; ?></div>
+											<div class="menu_content"><?php echo $row["price"]; ?>.</div>
+										</div>
+									</div>
+							<?php
+								}
+							}
+							?>
+						</div>
 					</div>
-					</div>
-					
+
 					<!-- ของทอดอื่นๆ -->
 					<div id="fires" class="tab-pane fade" role="tabpanel" aria-labelledby="fires-tab">
-					<div class="row">
-    				<?php
-	  					$sqlstar = "SELECT picproduct, thname, price FROM
+						<div class="row">
+							<?php
+							$sqlstar = "SELECT picproduct, thname, price FROM
     					tbproduct where typeproduct = \"fires\" ORDER BY productID ASC";
-      					$conn->query("SET NAMES utf8");
-     					$resultstar = $conn->query($sqlstar);
-     					if ($resultstar->num_rows > 0) {
-     					while($row = $resultstar->fetch_assoc()) {
-   					?>
-   						<div class="col-md-6">
-							<div class="single_menu">
-    						<a href="../foodmenu/fires/<?php echo $row["picproduct"];?>"data-fancybox="groupstar"data-caption="<?php echo $row["engname"];?><?php echo $row["thname"];?> ราคา<?php echo $row["price"];?> บาท" datawidth="400" data-height="400">
-							   <img src="../foodmenu/fires/<?php echo $row["picproduct"] ;?>" class=" col-xs-12"></a>
-							   <br><br>
-   							<div class="menu_content"><?php echo $row["thname"];?></div>
-   							<div class="menu_content"><?php echo $row["price"];?>.</div>
-							</div>
-  						</div> 
-    					<?php
-       						}
-     						}
-     					?>  
+							$conn->query("SET NAMES utf8");
+							$resultstar = $conn->query($sqlstar);
+							if ($resultstar->num_rows > 0) {
+								while ($row = $resultstar->fetch_assoc()) {
+									?>
+									<div class="col-md-6">
+										<div class="single_menu">
+											<a href="../foodmenu/fires/<?php echo $row["picproduct"]; ?>" data-fancybox="groupstar" data-caption="<?php echo $row["engname"]; ?><?php echo $row["thname"]; ?> ราคา<?php echo $row["price"]; ?> บาท" datawidth="400" data-height="400">
+												<img src="../foodmenu/fires/<?php echo $row["picproduct"]; ?>" class=" col-xs-12"></a>
+											<br><br>
+											<div class="menu_content"><?php echo $row["thname"]; ?></div>
+											<div class="menu_content"><?php echo $row["price"]; ?>.</div>
+										</div>
+									</div>
+							<?php
+								}
+							}
+							?>
+						</div>
 					</div>
-					</div>
-					
+
 					<!-- เครื่องดื่ม -->
 					<div id="drink" class="tab-pane fade" role="tabpanel" aria-labelledby="drink-tab">
-					<div class="row">
-    				<?php
-	  					$sqlstar = "SELECT picproduct, thname, price FROM
+						<div class="row">
+							<?php
+							$sqlstar = "SELECT picproduct, thname, price FROM
     					tbproduct where typeproduct = \"drink\" ORDER BY productID ASC";
-      					$conn->query("SET NAMES utf8");
-     					$resultstar = $conn->query($sqlstar);
-     					if ($resultstar->num_rows > 0) {
-     					while($row = $resultstar->fetch_assoc()) {
-   					?>
-   						<div class="col-md-6">
-							<div class="single_menu">
-    						<a href="../foodmenu/drink/<?php echo $row["picproduct"];?>"data-fancybox="groupstar"data-caption="<?php echo $row["engname"];?><?php echo $row["thname"];?> ราคา<?php echo $row["price"];?> บาท" datawidth="400" data-height="400">
-							   <img src="../foodmenu/drink/<?php echo $row["picproduct"] ;?>" class=" col-xs-12"></a>
-							   <br><br>
-   							<div class="menu_content"><?php echo $row["thname"];?></div>
-   							<div class="menu_content"><?php echo $row["price"];?>.</div>
-							</div>
-  						</div> 
-    					<?php
-       						}
-     						}
-     					?>  
-					</div>
+							$conn->query("SET NAMES utf8");
+							$resultstar = $conn->query($sqlstar);
+							if ($resultstar->num_rows > 0) {
+								while ($row = $resultstar->fetch_assoc()) {
+									?>
+									<div class="col-md-6">
+										<div class="single_menu">
+											<a href="../foodmenu/drink/<?php echo $row["picproduct"]; ?>" data-fancybox="groupstar" data-caption="<?php echo $row["engname"]; ?><?php echo $row["thname"]; ?> ราคา<?php echo $row["price"]; ?> บาท" datawidth="400" data-height="400">
+												<img src="../foodmenu/drink/<?php echo $row["picproduct"]; ?>" class=" col-xs-12"></a>
+											<br><br>
+											<div class="menu_content"><?php echo $row["thname"]; ?></div>
+											<div class="menu_content"><?php echo $row["price"]; ?>.</div>
+										</div>
+									</div>
+							<?php
+								}
+							}
+							?>
+						</div>
 					</div>
 
 
+				</div>
 			</div>
-		</div>
-	</section>
+		</section>
 
 </body>
 
