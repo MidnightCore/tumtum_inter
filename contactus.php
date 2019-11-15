@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html>
 <head>
@@ -11,7 +10,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Itim&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/aboutus.css">
-<style>
+    <style>
         #navfix {
             margin-left: 40px;
             font-size: 18px;
@@ -67,21 +66,23 @@
         #qq {
             color: rgb(255, 254, 254);
         }
-        #abt{
+
+        #abt {
             font-size: 20px;
         }
-    body,td,th {
-	font-family: Itim, cursive;
-}
-</style>
+
+        body,
+        td,
+        th {
+            font-family: Itim, cursive;
+        }
+    </style>
 </head>
+
 <body>
-<?php include('rsmenu.php');?>
-<br>
-<br>
-<br>
-<br>
-<div class="container">
+    <?php include('rsmenu.php'); ?>
+
+    <div class="container">
         <!--Section heading-->
         <h2 class="section-heading h1 pt-4">เกี่ยวกับเรา</h2>
         <!--Section description-->
@@ -116,7 +117,8 @@
 
             <div class="row">
                 <!--Grid column-->
-                <div class="col-lg-5 mb-4">                    <!--Form with header-->
+                <div class="col-lg-5 mb-4">
+                    <!--Form with header-->
                     <div class="card">
                         <div class="card-body">
                             <!--Header-->
@@ -129,33 +131,33 @@
 
                             <!--Body-->
                             <form action="server/addcontact.php" method="post" autocomplete="off">
-                            <div class="md-form">
-                                <i class="fas fa-user prefix grey-text"></i>
-                                <input type="text" id="nameContact" class="form-control input-group-lg">
-                                <label for="nameContact">Your name</label>
-                            </div>
+                                <div class="md-form">
+                                    <label for="nameContact">Your name</label>
+                                    <i class="fas fa-user prefix grey-text"></i>
+                                    <input type="text" id="nameContact" class="form-control input-group-lg">
+                                </div>
 
-                            <div class="md-form">
-                                <i class="fas fa-envelope prefix grey-text"></i>
-                                <input type="text" id="contactchannel" class="form-control input-group-lg">
-                                <label for="contactchannel">Your email</label>
-                            </div>
+                                <div class="md-form">
+                                    <label for="contactchannel">Your email</label>
+                                    <i class="fas fa-envelope prefix grey-text"></i>
+                                    <input type="text" id="contactchannel" class="form-control input-group-lg">
+                                </div>
 
-                            <div class="md-form">
-                                <i class="fas fa-tag prefix grey-text"></i>
-                                <input type="text" id="address" class="form-control input-group-lg">
-                                <label for="address">Address</label>
-                            </div>
+                                <div class="md-form">
+                                    <label for="address">Address</label>
+                                    <i class="fas fa-tag prefix grey-text"></i>
+                                    <input type="text" id="address" class="form-control input-group-lg">
+                                </div>
 
-                            <div class="md-form">
-                                <i class="fas fa-tag prefix grey-text"></i>
-                                <input type="text" id="description" class="form-control input-group-lg">
-                                <label for="description">Subject</label>
-                            </div>
+                                <div class="md-form">
+                                    <label for="description">Subject</label>
+                                    <i class="fas fa-tag prefix grey-text"></i>
+                                    <input type="text" id="description" class="form-control input-group-lg">
+                                </div>
 
-                            <div class="text-center mt-4">
-                                <button class="btn btn-light-blue">Submit</button>
-                            </div>
+                                <div class="text-center mt-4">
+                                    <button class="btn btn-outline-dark">Submit</button>
+                                </div>
                             </form>
                         </div>
 
@@ -170,9 +172,7 @@
 
                     <!--Google map-->
                     <div id="map-container-google-11" class="z-depth-1-half map-container-6" style="height: 400px">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3874.4272766440768!2d100.55967281419818!3d13.813362690307612!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29c454f39a4db%3A0x50da247e998aafff!2sUnion%20Mall!5e0!3m2!1sen!2sus!4v1568079011514!5m2!1sen!2sus"
-                            width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3874.4272766440768!2d100.55967281419818!3d13.813362690307612!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29c454f39a4db%3A0x50da247e998aafff!2sUnion%20Mall!5e0!3m2!1sen!2sus!4v1568079011514!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
                     </div><br>
 
                     <!--Buttons-->
@@ -202,7 +202,8 @@
     </div>
 
 
-  
+
 </body>
+
 </html>
-<?php include('footer.php');?>
+<?php include('footer.php'); ?>

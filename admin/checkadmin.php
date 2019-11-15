@@ -35,7 +35,7 @@
 			session_write_close();
 
 			//*** Go to Main page
-			header("location: admindetail.php");
+			header("location: admindetail2.php");
 		}
 			
 	}
