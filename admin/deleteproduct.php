@@ -7,6 +7,7 @@ if (!$conn) {
 	?>
     <?php
 $productID =$_GET['productID'];
+ 
 $sql = "delete from tbproduct where productID = '$productID' ";
 $query = mysqli_query($conn,$sql);
 if($query)
@@ -15,6 +16,7 @@ if($query)
 }
 mysqli_close($conn);
 ?>
+
 <tr>
        <td width="120"><a href="productfordelete.php">ย้อนกลับ</a></td>
 </tr>

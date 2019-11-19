@@ -131,32 +131,22 @@
 
                             <!--Body-->
                             <form action="server/addcontact.php" method="post" autocomplete="off">
-                                <div class="md-form">
-                                    <label for="nameContact">Your name</label>
-                                    <i class="fas fa-user prefix grey-text"></i>
-                                    <input type="text" id="nameContact" class="form-control input-group-lg">
-                                </div>
-
-                                <div class="md-form">
-                                    <label for="contactchannel">Your email</label>
-                                    <i class="fas fa-envelope prefix grey-text"></i>
-                                    <input type="text" id="contactchannel" class="form-control input-group-lg">
-                                </div>
-
-                                <div class="md-form">
-                                    <label for="address">Address</label>
-                                    <i class="fas fa-tag prefix grey-text"></i>
-                                    <input type="text" id="address" class="form-control input-group-lg">
-                                </div>
-
-                                <div class="md-form">
-                                    <label for="description">Subject</label>
-                                    <i class="fas fa-tag prefix grey-text"></i>
-                                    <input type="text" id="description" class="form-control input-group-lg">
-                                </div>
+                               <div class="form-group">
+       <input class="form-control input-group-lg" name="nameContact" type="text" placeholder="ชื่อ-นามสกุล">
+       </div>
+      <div class="form-group">
+       <input class="form-control input-group-lg" name="address" type="text" placeholder="ที่อยู่">
+       </div>
+       <div class="form-group">
+       <input class="form-control input-group-lg" name="contactchannel" type="text" placeholder="เบอร์โทร-อีเมล์-LineID">
+       </div>
+       <div class="form-group">
+       <input class="form-control input-group-lg" name="description" type="text" placeholder="รายละเอียดการติดต่อ">
+       </div>
 
                                 <div class="text-center mt-4">
-                                    <button class="btn btn-outline-dark">Submit</button>
+                                    <button type="submit"class="btn btn-outline-dark">Submit</button>
+                                    <button type="reset" class="btn btn-outline-dark">ลบข้อมูล</button>
                                 </div>
                             </form>
                         </div>
