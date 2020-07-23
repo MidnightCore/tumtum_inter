@@ -97,19 +97,19 @@ if (!$conn) die("Connection failed: " . mysqli_connect_error());
             <ul class="carousel-indicators">
                 <li data-target="#demo" data-slide-to="0" class="active"></li>
                 <li data-target="#demo" data-slide-to="1"></li>
-                <li data-target="#demo" data-slide-to="2"></li>
+                <!-- <li data-target="#demo" data-slide-to="2"></li> -->
             </ul>
             <!-- The slideshow -->
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="images/chili.jpg" alt="Los Angeles" width="1100" height="500">
+                    <img src="images/pro1.jpg" alt="Los Angeles" width="1100" height="500">
                 </div>
                 <div class="carousel-item">
-                    <img src="images/chili.jpg" alt="Chicago" width="1100" height="500">
+                    <img src="images/pro2.png" alt="Chicago" width="1100" height="500">
                 </div>
-                <div class="carousel-item">
+                <!-- <div class="carousel-item">
                     <img src="images/chili.jpg" alt="New York" width="1100" height="500">
-                </div>
+                </div> -->
             </div>
             <!-- Left and right controls -->
             <a class="carousel-control-prev" href="#demo" data-slide="prev">
@@ -177,5 +177,15 @@ if (!$conn) die("Connection failed: " . mysqli_connect_error());
 
 <?php include('footer.php');?>
 
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/7.4.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="/__/firebase/7.4.0/firebase-analytics.js"></script>
+
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>
 </body>
 </html>
