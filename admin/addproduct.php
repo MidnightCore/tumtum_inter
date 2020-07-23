@@ -51,6 +51,6 @@ if ($query) {
 mysqli_close($conn);
 ?>
 <tr>
-  <td width="120"><a href="admindetail.php">กลับสู่หน้าหลัก </a></td>
+  <td width="120"><a href="admindetail2.php">กลับสู่หน้าหลัก </a></td>
   <td>&nbsp;</td>
 </tr>
