@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 14, 2019 at 01:15 PM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.3.9
+-- Generation Time: Dec 14, 2020 at 03:00 PM
+-- Server version: 10.4.16-MariaDB
+-- PHP Version: 7.4.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -41,7 +40,8 @@ CREATE TABLE `admintb` (
 --
 
 INSERT INTO `admintb` (`AdminID`, `username`, `password`, `LoginStatusad`, `LastUpdatead`) VALUES
-(78999, 'admin', '123999', 1, '2019-11-14 16:41:16');
+(78999, 'admin', '123999', 0, '0000-00-00 00:00:00'),
+(00001, 'tumtum_admin', 'tumtum_admin', 1, '2020-12-12 14:15:38');
 
 -- --------------------------------------------------------
 
@@ -71,8 +71,7 @@ INSERT INTO `tbcontact` (`id`, `nameContact`, `address`, `contactchannel`, `desc
 (6, 'สมหญิง', '88/6', '055-355-4778', 'สอบถาม', '2019-10-16 10:50:37'),
 (7, 'วงศฏาพร', '88/7', '082-669-7788', 'สอบถาม', '2019-10-16 10:53:48'),
 (8, 'มาลิณี', '88/8', '081-665-7788', 'ส่งสินค้า', '2019-10-16 10:56:50'),
-(9, 'อภิศฎา', '88/9', '099-999-9999', 'สั่งของเพิ่ม', '2019-11-05 11:39:23'),
-(10, 'sdfs', 'sdf', 'ac', 'aczxc', '2019-11-05 14:16:43');
+(9, 'อภิศฎา', '88/9', '099-999-9999', 'สั่งของเพิ่ม', '2019-11-05 11:39:23');
 
 -- --------------------------------------------------------
 
