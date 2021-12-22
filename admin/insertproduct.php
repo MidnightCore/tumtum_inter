@@ -52,17 +52,20 @@ mysqli_set_charset($con, "utf8");
         <tr>
           <td>รหัสสินค้า</td>
           <td><label for="productID"></label>
-            <input name="productID" type="text" id="productID" size="10" maxlength="10"></td>
+            <input name="productID" type="text" id="productID" size="10" maxlength="10">
+          </td>
         </tr>
         <tr>
           <td>รายการสินค้า</td>
           <td><label for="thname"></label>
-            <textarea name="thname" cols="25" rows="2" id="thname"></textarea></td>
+            <textarea name="thname" cols="25" rows="2" id="thname"></textarea>
+          </td>
         </tr>
         <tr>
           <td>ราคา</td>
           <td><label for="price"></label>
-            <input name="price" type="text" id="price" size="20" maxlength="20"></td>
+            <input name="price" type="text" id="price" size="20" maxlength="20">
+          </td>
         </tr>
         <tr>
           <td>ประเภทสินค้า</td>
@@ -75,17 +78,20 @@ mysqli_set_charset($con, "utf8");
               <option value="fires">ของทอดและอื่นๆ</option>
               <option value="drink">เครื่องดื่ม</option>
 
-            </select></td>
+            </select>
+          </td>
         </tr>
         <tr>
           <td>รูปภาพ</td>
           <td><label for="picproduct"></label>
-            <input name="picproduct" type="file" id="picproduct" size="20" maxlength="20"></td>
+            <input name="picproduct" type="file" id="picproduct" size="20" maxlength="20">
+          </td>
         </tr>
         <tr>
           <td>&nbsp;</td>
           <td><input type="submit" name="adddata" id="adddata" value=" เพิ่มข้อมูล">
-            <input type="reset" name="clear" id="clear" value="ล้างข้อมูล"></td>
+            <input type="reset" name="clear" id="clear" value="ล้างข้อมูล">
+          </td>
         </tr>
       </table>
     </form>
@@ -94,10 +100,10 @@ mysqli_set_charset($con, "utf8");
     mysqli_close($conn);
     ?>
     <div>
-    <div class="text mt-4" style="text-align:right">
-      <a class="btn btn-light" href="admindetail2.php">กลับหน้าหลัก</a>
+      <div class="text mt-4" style="text-align:right">
+        <a class="btn btn-light" href="admindetail2.php">กลับหน้าหลัก</a>
+      </div>
     </div>
-  </div>
 </body>
 
 </html>
